@@ -1,7 +1,7 @@
 # ArcheLog
 ArcheLog is a new data logging and anti-grief software.
 
-ArcheLog is still in development, it'll ready when it'll ready.
+ArcheLog is still in development, it'll ready when it is ready.
 
 Roadmap:
 - [ ] This README
