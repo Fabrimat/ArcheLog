@@ -15,6 +15,7 @@ Roadmap:
   - [ ] SQLite
   - [ ] H2
   - [ ] MySQL
+    - [ ] Compression protocol
 - [ ] Logging
   - [ ] Blocks
     - [ ] Signs
@@ -46,3 +47,40 @@ Roadmap:
   - [ ] Entities
 - [ ] Purge
 - [ ] WorldEdit integration
+  - [ ] Block logging
+  - [ ] Selection
+- [ ] Multi version support
+  - [ ] 1.8 - 1.12
+  - [ ] 1.13+ (Flattening)
+  
+Database structure:
+- Block
+  - id [pk] (int)
+  - x (double)
+  - y (double)
+  - z (double)
+- Block modify
+  - id [pk] (int)
+  - playerid [fk] (int)
+  - blockid [fk] (int)
+  - time (timestamp)
+  - block_id (int)
+  - block_name (string)
+  - data (string ?)
+- Container snapshot
+  - id [pk] (int)
+  - blockmodid [fk] (int)
+  - data (string ?)
+- Container transaction
+  - id [pk] (int)
+  - blockid [fk] (int)
+  - playerid [fk] (int)
+  - time (timestamp)
+  - data (string ?)
+- Player
+  - id [pk] (int)
+  - uuid (string)
+- Player names
+  - id [pk] (int)
+  - playerid [fk] (int)
+  - name (string)
