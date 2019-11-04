@@ -48,6 +48,8 @@ Roadmap:
     - [ ] Signs
     - [ ] Containers
   - [ ] Entities
+    - [ ] Living entities (how?)
+    - [ ] Non living entities
 - [ ] Purge
 - [ ] WorldEdit integration
   - [ ] Block logging
@@ -57,7 +59,12 @@ Roadmap:
   - [ ] 1.13+ (Flattening)
   
 Database structure:
-- Block
+- Block simple
+  - id [pk] (int)
+  - x (int)
+  - y (int)
+  - z (int)
+- Block advanced
   - id [pk] (int)
   - x (double)
   - y (double)
@@ -65,7 +72,7 @@ Database structure:
 - Block modify
   - id [pk] (int)
   - playerid [fk] (int)
-  - blockid [fk] (int)
+  - blocksimpleid [fk] (int)
   - time (timestamp)
   - block_id (int)
   - block_name (string)
@@ -76,7 +83,7 @@ Database structure:
   - data (string ?)
 - Container transaction
   - id [pk] (int)
-  - blockid [fk] (int)
+  - blocksimpleid [fk] (int)
   - playerid [fk] (int)
   - time (timestamp)
   - data (string ?)
@@ -87,3 +94,10 @@ Database structure:
   - id [pk] (int)
   - playerid [fk] (int)
   - name (string)
+- Entity death
+  - id [pk] (int)
+  - playerid [fk] (int)
+  - blockadvancedid [fk] (int)
+  - playerid [fk] (int)
+  - type (string)
+  - data (string)
