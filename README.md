@@ -21,12 +21,16 @@ Roadmap:
     - [ ] Table partitioning
 - [ ] Logging
   - [ ] Blocks
+    - [ ] Normal blocks
     - [ ] Signs
     - [ ] Containers
     - [ ] Nether portals
   - [ ] Entities
-    - [ ] Armorstand
-    - [ ] ItemFrame
+    - [ ] Living entities
+    - [ ] Non living entities
+      - [ ] Armorstand
+      - [ ] Item frame
+      - [ ] Painting
     - [ ] Despawn types
       - [ ] Die
       - [ ] Kill
@@ -40,17 +44,28 @@ Roadmap:
   - [ ] Chat
 - [ ] Rollback
   - [ ] Blocks
-    - [ ] Signs
-    - [ ] Containers
-  - [ ] Entities
-- [ ] Restore
-  - [ ] Blocks
+    - [ ] Normal blocks
     - [ ] Signs
     - [ ] Containers
   - [ ] Entities
     - [ ] Living entities (how?)
     - [ ] Non living entities
+      - [ ] Armorstand
+      - [ ] Item frame
+      - [ ] Painting
+- [ ] Restore
+  - [ ] Blocks
+    - [ ] Normal blocks
+    - [ ] Signs
+    - [ ] Containers
+  - [ ] Entities
+    - [ ] Living entities (how?)
+    - [ ] Non living entities
+      - [ ] Armorstand
+      - [ ] Item frame
+      - [ ] Painting
 - [ ] Purge
+- [ ] Undo
 - [ ] WorldEdit integration
   - [ ] Block logging
   - [ ] Selection
