@@ -13,13 +13,16 @@ Roadmap:
 - [ ] Metrics
 - [ ] Error control
 - [ ] APIs
+- [ ] Standalone tool
 - [ ] Database
   - [ ] SQLite
   - [ ] H2
-  - [ ] MySQL
+    - [ ] Database compression
+  - [ ] MySQL (InnoDB)
     - [ ] Compression protocol
-    - [ ] InnoDB table compression
+    - [ ] Table compression
     - [ ] Table partitioning
+  - [ ] Database migration
 - [ ] Logging
   - [ ] Blocks
     - [ ] Normal blocks
@@ -93,6 +96,7 @@ Database structure:
   - block_id (int)
   - block_name (string)
   - data (string ?)
+  - rolled_back (bool)
 - Container snapshot
   - id [pk] (int)
   - blockmodid [fk] (int)
@@ -103,6 +107,7 @@ Database structure:
   - playerid [fk] (int)
   - time (timestamp)
   - data (string ?)
+  - rolled_back (bool)
 - Player
   - id [pk] (int)
   - uuid (string)
@@ -116,4 +121,15 @@ Database structure:
   - blockadvancedid [fk] (int)
   - playerid [fk] (int)
   - type (string)
-  - data (string)
+  - data (string ?)
+  - rolled_back (bool)
+- Player chat
+  - id [pk] (int)
+  - playerid [fk] (int)
+  - time (timestamp)
+  - message (string)
+- Player command
+  - id [pk] (int)
+  - playerid [fk] (int)
+  - time (timestamp)
+  - command (string)
