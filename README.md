@@ -5,12 +5,14 @@ ArcheLog is still in development, it'll ready when it is ready.
 
 Roadmap:
 - [ ] This README
-- [ ] Base plugin
-- [ ] Commands
-- [ ] Permissions
-- [ ] Config
-- [ ] Update checker
-- [ ] Metrics
+- [ ] Basics
+   - [ ] Commands
+  - [ ] Permissions
+    - [ ] Per group limits
+  - [ ] Config
+    - [ ] Locale
+  - [ ] Update checker
+  - [ ] Metrics
 - [ ] Error control
 - [ ] APIs
 - [ ] Standalone tool
@@ -26,9 +28,12 @@ Roadmap:
 - [ ] Logging
   - [ ] Blocks
     - [ ] Normal blocks
+    - [ ] Natural events
     - [ ] Signs
     - [ ] Containers
     - [ ] Nether portals
+    - [ ] Liquids
+      - [ ] Player tracking
   - [ ] Entities
     - [ ] Living entities
     - [ ] Non living entities
@@ -39,7 +44,9 @@ Roadmap:
       - [ ] Die
       - [ ] Kill
       - [ ] Despawn (Paper only)
+  - [ ] Player interactions
   - [ ] Player commands
+  - [ ] Player session
   - [ ] Chat
 - [ ] Lookup
   - [ ] Blocks
@@ -52,7 +59,7 @@ Roadmap:
     - [ ] Signs
     - [ ] Containers
   - [ ] Entities
-    - [ ] Living entities (how?)
+    - [ ] Living entities
     - [ ] Non living entities
       - [ ] Armorstand
       - [ ] Item frame
@@ -63,7 +70,7 @@ Roadmap:
     - [ ] Signs
     - [ ] Containers
   - [ ] Entities
-    - [ ] Living entities (how?)
+    - [ ] Living entities
     - [ ] Non living entities
       - [ ] Armorstand
       - [ ] Item frame
@@ -95,6 +102,7 @@ Database structure:
   - time (timestamp)
   - block_id (int)
   - block_name (string)
+  - modify_type (bool)
   - data (string ?)
   - rolled_back (bool)
 - Container snapshot
@@ -108,6 +116,17 @@ Database structure:
   - time (timestamp)
   - data (string ?)
   - rolled_back (bool)
+- Entity modify
+  - id [pk] (int)
+  - playerid [fk] (int)
+  - blocksimpleid [fk] (int)
+  - blockadvancedid [fk] (int)
+  - playerid [fk] (int)
+  - entity_id (int)
+  - entity_name (string)
+  - modify_type (bool)
+  - data (string ?)
+  - rolled_back (bool)
 - Player
   - id [pk] (int)
   - uuid (string)
@@ -115,14 +134,6 @@ Database structure:
   - id [pk] (int)
   - playerid [fk] (int)
   - name (string)
-- Entity death
-  - id [pk] (int)
-  - playerid [fk] (int)
-  - blockadvancedid [fk] (int)
-  - playerid [fk] (int)
-  - type (string)
-  - data (string ?)
-  - rolled_back (bool)
 - Player chat
   - id [pk] (int)
   - playerid [fk] (int)
@@ -133,3 +144,10 @@ Database structure:
   - playerid [fk] (int)
   - time (timestamp)
   - command (string)
+- Player interaction
+  - id [pk] (int)
+  - playerid [fk] (int)
+  - blocksimpleid [fk] (int)
+  - time (timestamp)
+  - block_id (int)
+  - block_name (string)
