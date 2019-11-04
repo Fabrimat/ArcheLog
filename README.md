@@ -23,8 +23,10 @@ Roadmap:
   - [ ] MySQL (InnoDB)
     - [ ] Compression protocol
     - [ ] Table compression
+      - [ ] Test
     - [ ] Table partitioning
   - [ ] Database migration
+  - [ ] Performance benchmark
 - [ ] Logging
   - [ ] Blocks
     - [ ] Normal blocks
