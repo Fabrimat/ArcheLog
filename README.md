@@ -12,6 +12,7 @@ Roadmap:
 - [ ] Update checker
 - [ ] Metrics
 - [ ] Error control
+- [ ] APIs
 - [ ] Database
   - [ ] SQLite
   - [ ] H2
