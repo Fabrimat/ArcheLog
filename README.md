@@ -11,11 +11,14 @@ Roadmap:
 - [ ] Config
 - [ ] Update checker
 - [ ] Metrics
+- [ ] Error control
 - [ ] Database
   - [ ] SQLite
   - [ ] H2
   - [ ] MySQL
     - [ ] Compression protocol
+    - [ ] InnoDB table compression
+    - [ ] Table partitioning
 - [ ] Logging
   - [ ] Blocks
     - [ ] Signs
