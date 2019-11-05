@@ -150,3 +150,11 @@ Database structure:
   - blocksimpleid [fk] (int)
   - time (timestamp)
   - block_map_id (int)
+- Block map
+  - id [pk] 
+  - block_id (int) 
+  - block_name (string)
+- Entity map
+  - id [pk] 
+  - entity_id (int) 
+  - entity_name (string) 
