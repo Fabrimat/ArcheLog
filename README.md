@@ -87,20 +87,24 @@ Roadmap:
   - [ ] 1.13+ (Flattening)
   
 Database structure:
-- Block simple
+- Block int
   - id [pk] (int)
   - x (int)
   - y (int)
   - z (int)
-- Block advanced
+- Block float
   - id [pk] (int)
-  - x (double)
-  - y (double)
-  - z (double)
+  - x (int)
+  - y (int)
+  - z (int)
+- Block
+  - id [pk] (int)
+  - blockintid [fk] (int)
+  - blockfloatid [fk] (int)
 - Block modify
   - id [pk] (int)
   - playerid [fk] (int)
-  - blocksimpleid [fk] (int)
+  - blockid [fk] (int)
   - time (timestamp)
   - block_map_id (int)
   - modify_type (bool)
@@ -112,7 +116,7 @@ Database structure:
   - data (string ?)
 - Container transaction
   - id [pk] (int)
-  - blocksimpleid [fk] (int)
+  - blockid [fk] (int)
   - playerid [fk] (int)
   - time (timestamp)
   - data (string ?)
@@ -120,8 +124,7 @@ Database structure:
 - Entity modify
   - id [pk] (int)
   - playerid [fk] (int)
-  - blocksimpleid [fk] (int)
-  - blockadvancedid [fk] (int)
+  - blockid [fk] (int)
   - playerid [fk] (int)
   - entity_map_id (int) 
   - modify_type (bool)
@@ -147,7 +150,7 @@ Database structure:
 - Player interaction
   - id [pk] (int)
   - playerid [fk] (int)
-  - blocksimpleid [fk] (int)
+  - blockid [fk] (int)
   - time (timestamp)
   - block_map_id (int)
 - Block map
